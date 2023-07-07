@@ -1,5 +1,5 @@
 .label {
-  width: 7%;
+  /* width: 7%; */
   background-color: #c084fc;
   border-top: 1px solid #8b8d92;
   border-top-left-radius: 0.2em;
@@ -7,6 +7,18 @@
   border-top-right-radius: 0.2em;
   border-right: 1px solid #8b8d92;
   border-left: 1px solid #8b8d92;
+}
+
+.container {
+  max-height: 38em;
+  min-height: 38em;
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-height: 35em;
+    min-height: 35em;
+  }
 }
 
 input, .range, .bill, .input {
@@ -37,9 +49,18 @@ input, .range, .bill, .input {
   border-left: none;
 }
 
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .label {
     width: 25%;
    
   }
+} */
+
+.spin {
+  border: solid 8px #c084fc;
+  border-bottom-color: #581c87;
+  border-radius: 50%;
+  content: "";
+  height: 100px;
+  width: 100px;
 }
