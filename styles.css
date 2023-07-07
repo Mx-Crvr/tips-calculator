@@ -12,16 +12,14 @@
 .container {
   max-height: 38em;
   min-height: 38em;
-  overflow: scroll;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   .spin {
     height: 50px;
     width: 50px;
   }
 }
-
 input, .range, .bill, .input {
   background-color: #F8F8F8;
   border: #8b8d92 1px solid;
