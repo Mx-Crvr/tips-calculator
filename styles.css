@@ -12,12 +12,13 @@
 .container {
   max-height: 38em;
   min-height: 38em;
+  overflow: scroll;
 }
 
 @media (max-width: 375px) {
-  .container {
-    max-height: 35em;
-    min-height: 35em;
+  .spin {
+    height: 50px;
+    width: 50px;
   }
 }
 
