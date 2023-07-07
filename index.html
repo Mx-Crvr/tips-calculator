@@ -6,8 +6,7 @@
   <title>Tips Calculator</title>
   <!-- CSS -->
   <link rel="stylesheet" href="./styles.css">
-  <!-- JS -->
-  <script src="./app.js" defer></script>
+  
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -22,39 +21,44 @@
       }
     }
   </script>
+  <!-- JS -->
+  <script src="./app.js" defer></script>
 </head>
 <body>
-  <main class="flex flex-col justify-center items-center h-screen text-md">
-    <div class="container flex flex-col justify-center items-center gap-5 bg-gray-200 border-2 border-black rounded-xl p-6 w-5/6" id="container">
-      <h1 class="font-semibold  lg:text-3xl">Tip Calculator</h1>
-      <div class="w-full flex flex-col justify-center">
-        <label class="text-2xl label" for="bill-amount">Bill</label>
-        <input class="bill w-full outline-purple-500 focus:bg-purple-200 py-5" type="number" name="bill-amount" id="bill-amount">
+  <main class="flex flex-col justify-center items-center h-screen text-sm">
+    <div class="container flex flex-col justify-center items-center gap-5 bg-gray-200 border-2 border-black rounded-xl py-2 px-4 lg:p-6  w-5/6 lg:w-1/2" id="container">
+      <h1 class="font-semibold text-xl lg:text-3xl" id="heading">Tip Calculator</h1>
+      <div class="w-full flex flex-col justify-center" id="bill-input">
+        <label class="text-lg lg:text-2xl label w-full lg:w-3/12 lg:text-center" for="bill-amount">Bill</label>
+        <input class="bill w-full outline-purple-500 focus:bg-purple-200 py-2 lg:py-4 lg:text-2xl" type="number" name="bill-amount" id="bill-amount">
       </div>
 
-      <div class="w-full flex flex-col justify-center">
-        <label class="text-2xl label" for="tip-percent">Tip</label>
+      <div class="w-full flex flex-col justify-center" id="tip-input">
+        <label class="text-lg lg:text-2xl label w-full lg:w-3/12 lg:text-center" for="tip-percent">Tip</label>
         <div class="range">
-          <input class="w-full cursor-pointer outline-purple-500" type="range" name="tip-percent" id="tip-percent" step="5" min="5" max="100" value="2">
-          <p class="inline xl:text-xl" id="tip-value">5%</p>
+          <input class="w-full cursor-pointer outline-purple-500" type="range" name="tip-percent" id="tip-percent" step="5" min="5" max="100" value="10">
+          <p class="inline text-sm lg:text-xl" id="tip-value">10%</p>
         </div>
       </div>
 
-      <button class="hidden w-3/4 bg-purple-900 text-white py-3 px-12 text-xl rounded-lg outline-purple-600 hover:bg-purple-600 hover:scale-95 transition-all" id="btn">Calculate</button>
+      <button class="w-full bg-purple-900 text-white py-2 lg:py-3 text-md lg:text-xl rounded-lg outline-purple-600 hover:bg-purple-600 hover:scale-95 transition-all" id="btn">Calculate</button>
 
-      <div class=" w-full flex flex-col justify-center items-stretch gap-5 answer-container mt-12">
-        <div class="answer flex">
-          <label class="text-lg w-1/5 label-answer" for="tip-amount">Tip Amount</label>
-          <p class="answer-value w-full" id="total-amount">
+      <div class="hidden w-full flex flex-col justify-center items-stretch gap-5 answer-container" id="answers">
+        <div class="answer flex flex-col lg:flex-row">
+          <label class="lg:text-md py-2 w-full lg:w-4/12 lg:text-center label-answer" for="tip-amount">Tip Amount</label>
+          <p class="answer-value lg:text-md font-bold w-full lg:py-2 lg:px-4" id="tip-amount">
         </div>
-        <div class="answer flex">
-          <label class="text-lg w-1/5 label-answer" for="total-amount">Total</label>
-          <p class="answer-value w-full" id="total-amount">
+        <div class="answer flex flex-col lg:flex-row">
+          <label class="lg:text-md py-2 w-full label-answer lg:w-4/12 lg:text-center" for="total-amount">Total</label>
+          <p class="answer-value w-full lg:text-md font-bold" id="total-amount">
         </div>
       </div>
 
+      <div id="spinner" role="status" class="hidden">
+        <div class="spin animate-spin "></div>
+    </div>
 
-      
+      <button class="hidden w-full bg-purple-900 text-white py-2 lg:py-3 text-md lg:text-xl rounded-lg outline-purple-600 hover:bg-purple-600 hover:scale-95 transition-all" id="btn-2">Re-calculate</button>
     </div>
   </main>
 </body>
